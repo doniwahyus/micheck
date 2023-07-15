@@ -3,7 +3,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "micheck";
+$database = "micheck_db";
 
 $conn = mysqli_connect($server,$username,$password,$database);
 
