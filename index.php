@@ -21,13 +21,10 @@ session_start();
     <!-- loading bar -->
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <link rel="stylesheet" href="./css/flash.css">
-    <title>Hotel blue bird</title>
+    <title>MiCheck Login</title>
 </head>
 
 <body>
-    <!--  carousel -->
-    
-
     <!-- main section -->
     <section id="">
 
@@ -37,16 +34,15 @@ session_start();
         </div>
 
         <div class="auth_container">
-            <!--============ login =============-->
-
+            <!-- ============ login ============= -->
             <div id="Log_in">
                 <h2>Log In</h2>
                 <div class="role_btn">
-                    <div class="btns active">User</div>
-                    <div class="btns">Staff</div>
+                    <div class="btns active">User Login</div>
+                    <div class="btns">Admin Login</div>
                 </div>
 
-                <!-- // ==userlogin== -->
+                <!-- ==userlogin== -->
                 <?php 
                 if (isset($_POST['user_login_submit'])) {
                     $Email = $_POST['Email'];
