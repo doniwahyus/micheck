@@ -119,7 +119,7 @@ if($usermail == true){
                         <option value="1">3</option> -->
                     </select>
                     <select name="Meal" class="selectinput">
-						<option value selected >Breakfast</option>
+						<option value="" disabled selected >Breakfast</option>
                         <option value="Room only">No</option>
                         <option value="Breakfast">Yes</option>
 					</select>
