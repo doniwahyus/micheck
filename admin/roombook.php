@@ -19,7 +19,7 @@ include '../config.php';
     <!-- sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./css/roombook.css">
-    <title>BlueBird - Admin</title>
+    <title>Admin MiCheck</title>
 </head>
 
 <body>
@@ -46,7 +46,7 @@ include '../config.php';
                         <?php
 							foreach($countries as $key => $value):
 							echo '<option value="'.$value.'">'.$value.'</option>';
-                            //close your tags!!
+                            
 							endforeach;
 						?>
                     </select>
@@ -56,7 +56,7 @@ include '../config.php';
                 <div class="line"></div>
 
                 <div class="reservationinfo">
-                    <h4>Reservation information</h4>
+                    <h4>Reservation Information</h4>
                     <select name="RoomType" class="selectinput">
 						<option value selected >Type Of Room</option>
                         <option value="Superior Room">SUPERIOR ROOM</option>
@@ -75,15 +75,11 @@ include '../config.php';
                     <select name="NoofRoom" class="selectinput">
 						<option value selected >No of Room</option>
                         <option value="1">1</option>
-                        <!-- <option value="1">2</option>
-                        <option value="1">3</option> -->
                     </select>
                     <select name="Meal" class="selectinput">
-						<option value selected >Meal</option>
-                        <option value="Room only">Room only</option>
-                        <option value="Breakfast">Breakfast</option>
-						<option value="Half Board">Half Board</option>
-						<option value="Full Board">Full Board</option>
+                        <option value="" disabled selected >Breakfast</option>
+                        <option value="Room only">No</option>
+                        <option value="Breakfast">Yes</option>
 					</select>
                     <div class="datesection">
                         <span>
@@ -103,7 +99,7 @@ include '../config.php';
         </form>
 
         <?php       
-        // <!-- room availablity start-->
+        //room availability start
 
         $rsql ="SELECT * FROM room";
         $rre= mysqli_query($conn,$rsql);
@@ -166,31 +162,31 @@ include '../config.php';
             }
         }
         // room availablity
-        // Superior Room =>
+        // Superior Room
         $f1 =$sr - $csc;
         if($f1 <=0 )
         {	
             $f1 = "NO";
         }
-        // Guest House =>
+        // Guest House
         $f2 =  $gh -$cgh;
         if($f2 <=0 )
         {	
             $f2 = "NO";
         }
-        // Single Room =>
+        // Single Room
         $f3 =$sr - $csr;
         if($f3 <=0 )
         {	
             $f3 = "NO";
         }
-        // Deluxe Room =>
+        // Deluxe Room
         $f4 =$dr - $cdr; 
         if($f4 <=0 )
         {	
             $f4 = "NO";
         }
-        //total available room =>
+        //total available room
         $f5 =$r-$cr; 
         if($f5 <=0 )
         {
@@ -225,40 +221,40 @@ include '../config.php';
                     $sql = "INSERT INTO roombook(Name,Email,Country,Phone,RoomType,Bed,NoofRoom,Meal,cin,cout,stat,nodays) VALUES ('$Name','$Email','$Country','$Phone','$RoomType','$Bed','$NoofRoom','$Meal','$cin','$cout','$sta',datediff('$cout','$cin'))";
                     $result = mysqli_query($conn, $sql);
 
-                    // if($f1=="NO")
-                    // {
-                    //     echo "<script>swal({
-                    //         title: 'Superior Room is not available',
-                    //         icon: 'error',
-                    //     });
-                    //     </script>";
-                    // }
-                    // else if($f2=="NO")
-                    // {
-                    //     echo "<script>swal({
-                    //         title: 'Guest House is not available',
-                    //         icon: 'error',
-                    //     });
-                    //     </script>";
-                    // }
-                    // else if($f3 == "NO")
-                    // {
-                    //     echo "<script>swal({
-                    //         title: 'Si Room is not available',
-                    //         icon: 'error',
-                    //     });
-                    //     </script>";
-                    // }
-                    // else if($f4 == "NO")
-                    // {
-                    //     echo "<script>swal({
-                    //         title: 'Deluxe Room is not available',
-                    //         icon: 'error',
-                    //     });
-                    //     </script>";
-                    // }
-                    // else if($result = mysqli_query($conn, $sql))
-                    // {
+                    if($f1=="NO")
+                    {
+                        echo "<script>swal({
+                            title: 'Superior Room is not available',
+                            icon: 'error',
+                        });
+                        </script>";
+                    }
+                    else if($f2=="NO")
+                    {
+                        echo "<script>swal({
+                            title: 'Guest House is not available',
+                            icon: 'error',
+                        });
+                        </script>";
+                    }
+                    else if($f3 == "NO")
+                    {
+                        echo "<script>swal({
+                            title: 'Si Room is not available',
+                            icon: 'error',
+                        });
+                        </script>";
+                    }
+                    else if($f4 == "NO")
+                    {
+                        echo "<script>swal({
+                            title: 'Deluxe Room is not available',
+                            icon: 'error',
+                        });
+                        </script>";
+                    }
+                    else if($result = mysqli_query($conn, $sql))
+                    {
                         if ($result) {
                             echo "<script>swal({
                                 title: 'Reservation successful',
@@ -272,7 +268,7 @@ include '../config.php';
                                 });
                         </script>";
                         }
-                    // }
+                    }
                 }
             }
         ?>
@@ -282,10 +278,7 @@ include '../config.php';
     <!-- ================================================= -->
     <div class="searchsection">
         <input type="text" name="search_bar" id="search_bar" placeholder="search..." onkeyup="searchFun()">
-        <button class="adduser" id="adduser" onclick="adduseropen()"><i class="fa-solid fa-bookmark"></i> Add</button>
-        <form action="./exportdata.php" method="post">
-            <button class="exportexcel" id="exportexcel" name="exportexcel" type="submit"><i class="fa-solid fa-file-arrow-down"></i></button>
-        </form>
+        <button class="adduser" id="adduser" onclick="adduseropen()"><i class="fa-solid fa-bookmark"></i>&nbsp ADD</button>
     </div>
 
     <div class="roombooktable" class="table-responsive-xl">

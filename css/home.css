@@ -75,7 +75,7 @@ ul li a:hover{
     display: flex;
     justify-content: center;
 }
-.logo .bluebirdlogo {
+.logo .logo-micheck {
     height: 100%;
 }
 
@@ -407,4 +407,17 @@ font-size: 30px;
     #contactus{
         padding: 0 30px;
     }
+}
+
+/* responsive stuff */
+#mobileview{
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }

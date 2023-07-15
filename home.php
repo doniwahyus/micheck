@@ -43,7 +43,7 @@ if($usermail == true){
 <body>
   <nav>
     <div class="logo">
-      <img class="bluebirdlogo" src="./image/LOGO MiCheck.png" alt="logo">
+      <img class="logo-micheck" src="./image/LOGO MiCheck.png" alt="logo">
       <p>MiCheck</p>
     </div>
     <ul>
@@ -190,7 +190,7 @@ if($usermail == true){
     
   <section id="secondsection">
     <div class="ourroom">
-      <h1 class="head">≼ Our room ≽</h1>
+      <h1 class="head">Choose Our Room</h1>
       <div class="roomselect">
         <div class="roombox">
           <div class="hotelphoto h1"></div>

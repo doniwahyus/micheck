@@ -170,7 +170,7 @@ if (isset($_POST['guestdetailedit'])) {
                         <?php
 							foreach($countries as $key => $value):
 							echo '<option value="'.$value.'">'.$value.'</option>';
-                            //close your tags!!
+                            
 							endforeach;
 						?>
                     </select>
@@ -180,7 +180,7 @@ if (isset($_POST['guestdetailedit'])) {
                 <div class="line"></div>
 
                 <div class="reservationinfo">
-                    <h4>Reservation information</h4>
+                    <h4>Reservation Information</h4>
                     <select name="RoomType" class="selectinput">
 						<option value selected >Type Of Room</option>
                         <option value="Superior Room">SUPERIOR ROOM</option>
@@ -199,15 +199,11 @@ if (isset($_POST['guestdetailedit'])) {
                     <select name="NoofRoom" class="selectinput">
 						<option value selected >No of Room</option>
                         <option value="1">1</option>
-                        <!-- <option value="1">2</option>
-                        <option value="1">3</option> -->
                     </select>
                     <select name="Meal" class="selectinput">
-						<option value selected >Meal</option>
-                        <option value="Room only">Room only</option>
-                        <option value="Breakfast">Breakfast</option>
-						<option value="Half Board">Half Board</option>
-						<option value="Full Board">Full Board</option>
+                        <option value="" disabled selected >Breakfast</option>
+                        <option value="Room only">No</option>
+                        <option value="Breakfast">Yes</option>
 					</select>
                     <div class="datesection">
                         <span>

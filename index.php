@@ -29,17 +29,17 @@ session_start();
     <section id="">
 
         <div class="logo">
-            <img class="bluebirdlogo" src="./image/LOGO MiCheck.png" alt="logo">
+            <img class="logo-micheck" src="./image/LOGO MiCheck.png" alt="logo">
             <p>MiCheck</p>
         </div>
 
         <div class="auth_container">
             <!-- ============ login ============= -->
             <div id="Log_in">
-                <h2>Log In</h2>
+                <h2>Login</h2>
                 <div class="role_btn">
-                    <div class="btns active">User Login</div>
-                    <div class="btns">Admin Login</div>
+                    <div class="btns active">User</div>
+                    <div class="btns">Admin</div>
                 </div>
 
                 <!-- ==userlogin== -->
@@ -78,10 +78,10 @@ session_start();
                         <input type="password" class="form-control" name="Password" placeholder=" ">
                         <label for="Password">Password</label>
                     </div>
-                    <button type="submit" name="user_login_submit" class="auth_btn">Log in</button>
+                    <button type="submit" name="user_login_submit" class="auth_btn">Login</button>
 
                     <div class="footer_line">
-                        <h6>Don't have an account? <span class="page_move_btn" onclick="signuppage()">sign up</span></h6>
+                        <h6>Don't have an account? <span class="page_move_btn" onclick="signuppage()">register here</span></h6>
                     </div>
                 </form>
                 

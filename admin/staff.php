@@ -10,7 +10,7 @@ include '../config.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueBird - Admin</title>
+    <title>Admin MiCheck</title>
     <!-- fontowesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- boot -->
@@ -37,11 +37,11 @@ include '../config.php';
                 <option value="Manager">Manager</option>
                 <option value="Cook">Cook</option>
                 <option value="Helper">Helper</option>
-                <option value="cleaner">cleaner</option>
-                <option value="weighter">weighter</option>
+                <option value="Cleaner">Cleaner</option>
+                <option value="Weighter">Weighter</option>
             </select>
 
-            <button type="submit" class="btn btn-success" name="addstaff">Add Room</button>
+            <button type="submit" class="btn btn-success" name="addstaff">Add</button>
         </form>
 
         <?php
@@ -59,8 +59,6 @@ include '../config.php';
         ?>
     </div>
 
-
-    <!-- here room add because room.php and staff.php both css is similar -->
     <div class="room">
     <?php
         $sql = "select * from staff";
