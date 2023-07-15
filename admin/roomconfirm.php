@@ -80,14 +80,6 @@ if($stat == "NotConfirm")
         {
             $type_of_meal=$type_of_bed * 2;
         }
-        else if($Meal=="Half Board")
-        {
-            $type_of_meal=$type_of_bed * 3;
-        }
-        else if($Meal=="Full Board")
-        {
-            $type_of_meal=$type_of_bed * 4;
-        }
                                                             
         $ttot = $type_of_room *  $noofday * $NoofRoom;
         $mepr = $type_of_meal *  $noofday;

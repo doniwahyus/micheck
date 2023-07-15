@@ -14,7 +14,6 @@ if($usermail == true){
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,7 @@ if($usermail == true){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/home.css">
-    <title>Hotel blue bird</title>
+    <title>MiCheck</title>
     <!-- boot -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -87,7 +86,7 @@ if($usermail == true){
                         <?php
 							foreach($countries as $key => $value):
 							echo '<option value="'.$value.'">'.$value.'</option>';
-                            //close your tags!!
+
 							endforeach;
 						?>
                     </select>
@@ -120,11 +119,9 @@ if($usermail == true){
                         <option value="1">3</option> -->
                     </select>
                     <select name="Meal" class="selectinput">
-						<option value selected >Meal</option>
-                        <option value="Room only">Room only</option>
-                        <option value="Breakfast">Breakfast</option>
-						<option value="Half Board">Half Board</option>
-						<option value="Full Board">Full Board</option>
+						<option value selected >Breakfast</option>
+                        <option value="Room only">No</option>
+                        <option value="Breakfast">Yes</option>
 					</select>
                     <div class="datesection">
                         <span>
@@ -212,7 +209,7 @@ if($usermail == true){
         <div class="roombox">
           <div class="hotelphoto h2"></div>
           <div class="roomdata">
-            <h2>Delux Room</h2>
+            <h2>Deluxe Room</h2>
             <div class="services">
               <i class="fa-solid fa-wifi"></i>
               <i class="fa-solid fa-burger"></i>
