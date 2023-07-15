@@ -38,41 +38,41 @@ if (isset($_POST['guestdetailedit'])) {
     $type_of_room = 0;
     if($EditRoomType=="Superior Room")
     {
-        $type_of_room = 3000;
+        $type_of_room = 300;
     }
     else if($EditRoomType=="Deluxe Room")
     {
-        $type_of_room = 2000;
+        $type_of_room = 250;
     }
     else if($EditRoomType=="Guest House")
     {
-        $type_of_room = 1500;
+        $type_of_room = 75;
     }
     else if($EditRoomType=="Single Room")
     {
-        $type_of_room = 1000;
+        $type_of_room = 50;
     }
     
     
     if($EditBed=="Single")
     {
-        $type_of_bed = $type_of_room * 1/100;
+        $type_of_bed = $type_of_room * 1/10;
     }
     else if($EditBed=="Double")
     {
-        $type_of_bed = $type_of_room * 2/100;
+        $type_of_bed = $type_of_room * 2/10;
     }
     else if($EditBed=="Triple")
     {
-        $type_of_bed = $type_of_room * 3/100;
+        $type_of_bed = $type_of_room * 3/10;
     }
     else if($EditBed=="Quad")
     {
-        $type_of_bed = $type_of_room * 4/100;
+        $type_of_bed = $type_of_room * 4/10;
     }
     else if($EditBed=="None")
     {
-        $type_of_bed = $type_of_room * 0/100;
+        $type_of_bed = $type_of_room * 0/10;
     }
 
     if($EditMeal=="Room only")
@@ -83,14 +83,7 @@ if (isset($_POST['guestdetailedit'])) {
     {
         $type_of_meal=$type_of_bed * 2;
     }
-    else if($EditMeal=="Half Board")
-    {
-        $type_of_meal=$type_of_bed * 3;
-    }
-    else if($EditMeal=="Full Board")
-    {
-        $type_of_meal=$type_of_bed * 4;
-    }
+
     
     // noofday update
     $psql ="Select * from roombook where id = '$id'";
