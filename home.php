@@ -90,7 +90,7 @@ if($usermail == true){
 							endforeach;
 						?>
                     </select>
-                    <input type="text" name="Phone" placeholder="Enter Phoneno">
+                    <input type="text" name="Phone" placeholder="Masukan No.Telp  ">
                 </div>
 
                 <div class="line"></div>

@@ -35,41 +35,41 @@ if($stat == "NotConfirm")
         $type_of_room = 0;      
         if($RoomType=="Superior Room")
         {
-            $type_of_room = 3000;
+            $type_of_room = 300;
         }
         else if($RoomType=="Deluxe Room")
         {
-            $type_of_room = 2000;
+            $type_of_room = 250;
         }
         else if($RoomType=="Guest House")
         {
-            $type_of_room = 1500;
+            $type_of_room = 75;
         }
         else if($RoomType=="Single Room")
         {
-            $type_of_room = 1000;
+            $type_of_room = 50;
         }
         
         
         if($Bed=="Single")
         {
-            $type_of_bed = $type_of_room * 1/100;
+            $type_of_bed = $type_of_room * 1/10;
         }
         else if($Bed=="Double")
         {
-            $type_of_bed = $type_of_room * 2/100;
+            $type_of_bed = $type_of_room * 2/10;
         }
         else if($Bed=="Triple")
         {
-            $type_of_bed = $type_of_room * 3/100;
+            $type_of_bed = $type_of_room * 3/10;
         }
         else if($Bed=="Quad")
         {
-            $type_of_bed = $type_of_room * 4/100;
+            $type_of_bed = $type_of_room * 4/10;
         }
             else if($Bed=="None")
         {
-            $type_of_bed = $type_of_room * 0/100;
+            $type_of_bed = $type_of_room * 0/10;
         }
 
         if($Meal=="Room only")
