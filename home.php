@@ -91,7 +91,7 @@ if($usermail == true){
 							endforeach;
 						?>
                     </select>
-                    <input type="text" name="Phone" placeholder="Enter Phoneno">
+                    <input type="text" name="Phone" placeholder="Masukan No.Telp  ">
                 </div>
 
                 <div class="line"></div>
@@ -120,11 +120,9 @@ if($usermail == true){
                         <option value="1">3</option> -->
                     </select>
                     <select name="Meal" class="selectinput">
-						<option value selected >Meal</option>
+                        <option value="" disabled selected>Meal</option>
                         <option value="Room only">Room only</option>
-                        <option value="Breakfast">Breakfast</option>
-						<option value="Half Board">Half Board</option>
-						<option value="Full Board">Full Board</option>
+                        <option value="Breakfast">Breakfast</option>						
 					</select>
                     <div class="datesection">
                         <span>
