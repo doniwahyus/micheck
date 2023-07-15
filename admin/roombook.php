@@ -105,10 +105,10 @@ include '../config.php';
         <?php       
         // <!-- room availablity start-->
 
-        $rsql ="select * from room";
+        $rsql ="SELECT * FROM room";
         $rre= mysqli_query($conn,$rsql);
         $r = 0;
-        $sc = 0;
+        $sr = 0;
         $gh = 0;
         $sr = 0;
         $dr = 0;
@@ -119,7 +119,7 @@ include '../config.php';
             $s = $rrow['type'];
             if($s=="Superior Room")
             {
-                $sc = $sc+ 1;
+                $sr = $sr+ 1;
             }
             if($s=="Guest House")
             {
@@ -135,7 +135,7 @@ include '../config.php';
             }
         }
 
-        $csql ="select * from payment";
+        $csql ="SELECT * FROM payment";
         $cre= mysqli_query($conn,$csql);
         $cr =0 ;
         $csc =0;
@@ -167,7 +167,7 @@ include '../config.php';
         }
         // room availablity
         // Superior Room =>
-        $f1 =$sc - $csc;
+        $f1 =$sr - $csc;
         if($f1 <=0 )
         {	
             $f1 = "NO";
@@ -215,7 +215,7 @@ include '../config.php';
 
                 if($Name == "" || $Email == "" || $Country == ""){
                     echo "<script>swal({
-                        title: 'Fill the proper details',
+                        title: 'Gagal,pastikan kolom tidak kosong',
                         icon: 'error',
                     });
                     </script>";

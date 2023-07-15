@@ -80,7 +80,7 @@
         </div>
         <div class="box profitbox">
         <h2>Profit</h1>  
-          <h1><?php echo $tot?> <span>IDR</span></h1>
+          <h1><?php echo $tot?> <span>&#36;</span></h1>
         </div>
     </div>
     
