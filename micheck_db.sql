@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2023 at 05:19 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jul 19, 2023 at 01:22 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `emp_login` (
   `empid` int(100) NOT NULL,
   `Emp_Email` varchar(50) NOT NULL,
   `Emp_Password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `emp_login`
@@ -61,14 +61,15 @@ CREATE TABLE `payment` (
   `meal` varchar(30) NOT NULL,
   `mealtotal` double(8,2) NOT NULL,
   `finaltotal` double(8,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `payment`
 --
 
 INSERT INTO `payment` (`id`, `Name`, `Email`, `RoomType`, `Bed`, `NoofRoom`, `cin`, `cout`, `noofdays`, `roomtotal`, `bedtotal`, `meal`, `mealtotal`, `finaltotal`) VALUES
-(54, 'Tegar', 'tegar@gmail.com', 'Superior Room', 'Double', 1, '2023-07-15', '2023-07-16', 1, 300.00, 60.00, 'Breakfast', 120.00, 480.00);
+(54, 'Tegar', 'tegar@gmail.com', 'Superior Room', 'Double', 1, '2023-07-15', '2023-07-16', 1, 300.00, 60.00, 'Breakfast', 120.00, 480.00),
+(55, 'haha', 'haah@mail.com', 'Superior Room', 'Double', 1, '2023-07-17', '2023-07-19', 2, 600.00, 120.00, 'Breakfast', 240.00, 960.00);
 
 -- --------------------------------------------------------
 
@@ -80,7 +81,7 @@ CREATE TABLE `room` (
   `id` int(30) NOT NULL,
   `type` varchar(50) NOT NULL,
   `bedding` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `room`
@@ -125,34 +126,15 @@ CREATE TABLE `roombook` (
   `cout` date NOT NULL,
   `nodays` int(50) NOT NULL,
   `stat` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `roombook`
 --
 
 INSERT INTO `roombook` (`id`, `Name`, `Email`, `Country`, `Phone`, `RoomType`, `Bed`, `Meal`, `NoofRoom`, `cin`, `cout`, `nodays`, `stat`) VALUES
-(54, 'Tegar', 'tegar@gmail.com', 'Indonesia', '0851', 'Superior Room', 'Double', 'Breakfast', '1', '2023-07-15', '2023-07-16', 1, 'Confirm');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `signup`
---
-
-CREATE TABLE `signup` (
-  `UserID` int(100) NOT NULL,
-  `Username` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `signup`
---
-
-INSERT INTO `signup` (`UserID`, `Username`, `Email`, `Password`) VALUES
-(7, 'tegar', 'tegar@gmail.com', '123');
+(54, 'Tegar', 'tegar@gmail.com', 'Indonesia', '0851', 'Superior Room', 'Double', 'Breakfast', '1', '2023-07-15', '2023-07-16', 1, 'Confirm'),
+(55, 'haha', 'haah@mail.com', 'Bahamas', '09448484848', 'Superior Room', 'Double', 'Breakfast', '1', '2023-07-17', '2023-07-19', 2, 'Confirm');
 
 -- --------------------------------------------------------
 
@@ -164,7 +146,7 @@ CREATE TABLE `staff` (
   `id` int(30) NOT NULL,
   `name` varchar(30) NOT NULL,
   `work` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `staff`
@@ -175,6 +157,26 @@ INSERT INTO `staff` (`id`, `name`, `work`) VALUES
 (14, 'Yoga P', 'Helper'),
 (15, 'Doni W. Saputro', 'Weighter'),
 (16, 'Mr. Widi', 'Manager');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `UserID` int(11) NOT NULL,
+  `Username` varchar(45) NOT NULL,
+  `Email` varchar(45) NOT NULL,
+  `Password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`UserID`, `Username`, `Email`, `Password`) VALUES
+(1, 'Doni', 'dondon12@mail.com', 'doniaja');
 
 --
 -- Indexes for dumped tables
@@ -205,16 +207,16 @@ ALTER TABLE `roombook`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `signup`
---
-ALTER TABLE `signup`
-  ADD PRIMARY KEY (`UserID`);
-
---
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`UserID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -236,19 +238,19 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT for table `roombook`
 --
 ALTER TABLE `roombook`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
-
---
--- AUTO_INCREMENT for table `signup`
---
-ALTER TABLE `signup`
-  MODIFY `UserID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -27,6 +27,7 @@ if($usermail == true){
     <link rel="stylesheet" href="../css/flash.css">
     <!-- fontowesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="../image/logo.png" rel="shortcut icon">
     <title>Admin MiCheck</title>
 </head>
 
@@ -39,7 +40,7 @@ if($usermail == true){
     <!-- nav bar -->
     <nav class="uppernav">
         <div class="logo">
-            <img class="bluebirdlogo" src="../image/LOGO Micheck.png" alt="logo">
+            <img class="bluebirdlogo" src="../image/logo.png" alt="logo">
             <p>MiCheck</p>
         </div>
         <div class="logout">

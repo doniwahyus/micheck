@@ -21,6 +21,7 @@ session_start();
     <!-- loading bar -->
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <link rel="stylesheet" href="./css/flash.css">
+    <link href="./image/logo.png" rel="shortcut icon">
     <title>MiCheck Login</title>
 </head>
 
@@ -29,7 +30,7 @@ session_start();
     <section id="">
 
         <div class="logo">
-            <img class="logo-micheck" src="./image/LOGO MiCheck.png" alt="logo">
+            <img class="logo-micheck" src="./image/logo.png" alt="logo">
             <p>MiCheck</p>
         </div>
 
@@ -48,7 +49,7 @@ session_start();
                     $Email = $_POST['Email'];
                     $Password = $_POST['Password'];
 
-                    $sql = "SELECT * FROM signup WHERE Email = '$Email' AND Password = BINARY'$Password'";
+                    $sql = "SELECT * FROM user WHERE Email = '$Email' AND Password = BINARY'$Password'";
                     $result = mysqli_query($conn, $sql);
 
                     if ($result->num_rows > 0) {
@@ -122,7 +123,7 @@ session_start();
                 
             </div>
 
-            <!--============ signup =============-->
+            <!--============ signup user =============-->
             <?php       
                 if (isset($_POST['user_signup_submit'])) {
                     $Username = $_POST['Username'];
@@ -139,7 +140,7 @@ session_start();
                     }
                     else{
                         if ($Password == $CPassword) {
-                            $sql = "SELECT * FROM signup WHERE Email = '$Email'";
+                            $sql = "SELECT * FROM user WHERE Email = '$Email'";
                             $result = mysqli_query($conn, $sql);
     
                             if ($result->num_rows > 0) {
@@ -149,7 +150,7 @@ session_start();
                                 });
                                 </script>";
                             } else {
-                                $sql = "INSERT INTO signup (Username,Email,Password) VALUES ('$Username', '$Email', '$Password')";
+                                $sql = "INSERT INTO user (Username,Email,Password) VALUES ('$Username', '$Email', '$Password')";
                                 $result = mysqli_query($conn, $sql);
     
                                 if ($result) {
