@@ -2,7 +2,13 @@
 
 include 'config.php';
 session_start();
-
+if (isset($_SESSION['usermail'])) {
+    if ($_SESSION['usermail'] == 'admin@gmail.com') {
+      header("Location: admin/admin.php");
+      die;
+    }
+    header("Location: home.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
